@@ -2,7 +2,7 @@ import pandas as pd
 
 
 def test_run():
-    df = pd.read_csv("data/AAPL.csv")
+    df = pd.read_csv("../data/AAPL.csv")
     print(df)  # print entire dataframe
 
     print(df.head())  # print first 5 rows
