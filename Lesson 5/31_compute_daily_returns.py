@@ -41,6 +41,7 @@ def compute_daily_returns(df):
     # Note: Returned DataFrame must have the same number of rows
     daily_returns = df.copy()  # copy given dataframe to match size and column names
     # compute daily returns starting from row 1 as no data present for day before day 0
+    # another way to do this is: (df[1:]/df[:-1].values) - 1
     daily_returns[1:] = (df/df.shift(1)) - 1
     daily_returns.iloc[0, :] = 0  # set daily returns for row 0 to 0
     return daily_returns
